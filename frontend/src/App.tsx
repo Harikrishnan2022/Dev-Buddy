@@ -20,13 +20,7 @@ function App() {
 
  
 
-const signupUser = () => {
-createUserWithEmailAndPassword (
-auth,
-"piyushgarg.dev@gmail.com",
-"Piyush@123"
-).then((value) => console.log(value));
-};
+
 
   return (
     <>
