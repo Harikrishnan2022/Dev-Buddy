@@ -10,10 +10,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-screen h-screen ">
         <Header></Header>
         <Login></Login>
-        <Footer></Footer>
+        
     </div>
   )
 }
