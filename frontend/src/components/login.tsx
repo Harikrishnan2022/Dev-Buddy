@@ -9,19 +9,25 @@ export default function Login() {
     throw new Error("Function not implemented.");
   }
 
-  return (
-    <div className="min-h-screen w-screen  flex flex-col flex items-center justify-center bg-gray-100">
-      <main className="flex-grow flex flex-col md:flex-row items-center justify-center px-6 lg:px-20 gap-10">
-        
-        {/* Left Side: Welcome Text */}
-        <div className="md:w-1/2 max-w-lg">
-          <h1 className="text-6xl font-black tracking-tight text-black mb-4">
-            WELCOME
-          </h1>
-          <p className="text-gray-700 text-lg leading-snug font-medium">
-            Log in to access your dashboard, continue learning, and manage your courses. 
-            Enter your credentials to get started.
-          </p>
+        ```
+        <html class="h-full bg-gray-900">
+        <body class="h-full">
+        ```
+      */}
+      <div className="block w-full 
+border border-gray-600 
+bg-gray-800 
+px-3 py-1.5 
+text-white placeholder-gray-400 
+focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 
+sm:text-sm">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <img
+            alt="Your Company"
+            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+            className="mx-auto h-10 w-auto"
+          />
+          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in to your account</h2>
         </div>
 
         {/* Right Side: Login Card */}
