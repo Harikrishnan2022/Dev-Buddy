@@ -13,7 +13,7 @@ function App() {
     <div className="w-full h-screen bg-gray-900">
         <Header></Header>
         <Login></Login>
-        <Footer></Footer>
+        
     </div>
   )
 }

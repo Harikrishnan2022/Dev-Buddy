@@ -1,8 +1,13 @@
+import type { FormEvent } from "react";
+
 export default function Login() {
-  return (
-    <>
-      {/*
-        This example requires updating your template:
+  function setEmail(value: string): void {
+    throw new Error("Function not implemented.");
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+    throw new Error("Function not implemented.");
+  }
 
         ```
         <html class="h-full bg-gray-900">
@@ -25,65 +30,45 @@ sm:text-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in to your account</h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
-            <div>
-              <label htmlFor="email" className="block text-sm/6 font-medium text-gray-100">
-                Email address
+        {/* Right Side: Login Card */}
+        <div className="md:w-1/2 w-full max-w-md bg-[#98A2EE] rounded-[40px] p-10 shadow-xl">
+          <form className="space-y-4">
+            <input 
+              type="text" 
+              placeholder="username" 
+              className="w-full bg-[#3D446E] text-white placeholder-gray-400 rounded-xl px-4 py-4 outline-none border-none"
+            />
+            <input 
+              type="password" 
+              placeholder="Password" 
+              className="w-full bg-[#3D446E] text-white placeholder-gray-400 rounded-xl px-4 py-4 outline-none border-none"
+            />
+            
+            <div className="flex justify-between items-center text-xs text-white px-1">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" className="w-4 h-4 rounded bg-[#3D446E] border-none" />
+                Remember me
               </label>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-                />
-              </div>
+              <a href="#" className="hover:underline">Forgot password?</a>
             </div>
 
-            <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm/6 font-medium text-gray-100">
-                  Password
-                </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
-                    Forgot password?
-                  </a>
-                </div>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                  className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-                />
-              </div>
-            </div>
+            <button className="w-full bg-[#3D446E] text-white font-bold text-2xl py-4 rounded-xl mt-4 hover:bg-[#2f3557] transition-colors">
+              LOGIN
+            </button>
 
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Sign in
-              </button>
-            </div>
+            <p className="text-center text-white text-sm mt-4">
+              Don't have an account? <span className="font-bold cursor-pointer hover:underline">Sign up</span>
+            </p>
+
+            {/* Google Login Button */}
+            <button type="button" className="w-full bg-white flex justify-center items-center py-3 rounded-xl mt-4">
+              <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" className="h-8 w-8" />
+            </button>
           </form>
-
-          <p className="mt-10 text-center text-sm/6 text-gray-400">
-            Not a member?{' '}
-            <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
-              Start a 14 day free trial
-            </a>
-          </p>
         </div>
-      </div>
-    </>
-  )
+      </main>
+    </div>
+  
+    
+  );
 }
