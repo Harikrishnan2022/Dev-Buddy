@@ -86,12 +86,13 @@ export default function Signup() {
 
           {/* Login Button */}
           <button
+        
             type="submit"
             className="bg-[#363e63] border border-white/10 text-white text-sm rounded-lg 
                placeholder-[#bcc7f7] focus:ring-blue-500 focus:border-blue-500 
                block w-full p-2.5 outline-none"
           >
-            Login
+            Sign-up
           </button>
 
           {/* Signup */}
