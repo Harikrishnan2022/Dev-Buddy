@@ -1,8 +1,12 @@
 import { useState, type FormEvent } from "react";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { Link,useNavigate } from "react-router-dom";
-import { app } from "../firebase/firebase"; // adjust path if needed
-
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { app } from "../firebase/firebase";
 
 const auth = getAuth(app);
 
@@ -11,106 +15,124 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-
-async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Login successful ✅");
-    // later: navigate("/dashboard");
-  } catch (error: any) {
-    alert(error.message);
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful ✅");
+      // navigate("/dashboard");
+    } catch (error: any) {
+      alert(error.message);
+    }
   }
-}
 
-async function handleGoogleLogin() {
-  try {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
-    alert("Google login successful ✅");
-  } catch (error: any) {
-    alert(error.message);
+  async function handleGoogleLogin() {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      alert("Google login successful ✅");
+    } catch (error: any) {
+      alert(error.message);
+    }
   }
-}
-
-
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="w-full max-w-md bg-[#98A2EE] rounded-[40px] p-10 shadow-xl">
+    // ⬇️ FIX: subtract navbar height (64px)
+    <div className="w-full min-h-[calc(100vh-64px)] flex items-center justify-center bg-white">
+      <div className="w-full max-w-md bg-[#8ea2fa] rounded-lg shadow-md p-8">
 
-        {/* Logo */}
-        <img
-          alt="Your Company"
-          src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-          className="mx-auto h-10 w-auto"
-        />
-
-        <h2 className="mt-6 text-center text-2xl font-bold text-white">
+        <h2 className="text-2xl font-bold text-white text-center mb-6">
           Sign in to your account
         </h2>
 
-        {/* Login Form */}
-        <form onSubmit={handleSubmit} className="space-y-4 mt-8">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-[#3D446E] text-white placeholder-gray-400 rounded-xl px-4 py-4 outline-none"
-            required
-          />
+        <form onSubmit={handleSubmit} className="space-y-5">
+          
+          <div>
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Email"
+    className="bg-[#363e63] border border-white/10 text-white text-sm rounded-lg 
+               placeholder-[#bcc7f7] focus:ring-blue-500 focus:border-blue-500 
+               block w-full p-2.5 outline-none"
+    required
+  />
+</div>
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-[#3D446E] text-white placeholder-gray-400 rounded-xl px-4 py-4 outline-none"
-            required
-          />
+          {/* Password */}
+          <div>
+           
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="bg-[#363e63] border border-white/10 text-white text-sm rounded-lg 
+               placeholder-[#bcc7f7] focus:ring-blue-500 focus:border-blue-500 
+               block w-full p-2.5 outline-none"
+              required
+            />
+          </div>
 
-          <div className="flex justify-between items-center text-xs text-white px-1">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" className="w-4 h-4" />
-              Remember me
-            </label>
-            <a href="#" className="hover:underline">
+          {/* Remember / Forgot */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember"
+                type="checkbox"
+                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+              />
+              <label htmlFor="remember" className="ml-2 text-sm text-white">
+                Remember me
+              </label>
+            </div>
+            <a href="#" className="text-sm text-white hover:underline">
               Forgot password?
             </a>
           </div>
 
+          {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-[#3D446E] text-white font-bold text-2xl py-4 rounded-xl hover:bg-[#2f3557] transition-colors"
+            className="bg-[#363e63] border border-white/10 text-white text-sm rounded-lg 
+               placeholder-[#bcc7f7] focus:ring-blue-500 focus:border-blue-500 
+               block w-full p-2.5 outline-none"
           >
-            LOGIN
+            Login
           </button>
 
-          <p className="text-center text-white text-sm">
+          {/* Signup */}
+          <p className="text-sm text-gray-600 text-center">
             Don&apos;t have an account?{" "}
-      <Link
-      to="/signup"
-      className="font-bold hover:underline"> 
-
+            <Link to="/signup" className="text-blue-600 hover:underline font-medium">
               Sign up
-      </Link>
-            
-           
+            </Link>
           </p>
+
+          {/* Divider */}
+          <div className="flex items-center my-4">
+            <div className="flex-grow border-t border-gray-300" />
+            <span className="mx-2 text-gray-400 text-sm">OR</span>
+            <div className="flex-grow border-t border-gray-300" />
+          </div>
 
           {/* Google Login */}
           <button
             type="button"
             onClick={handleGoogleLogin}
-            className="w-full bg-white flex justify-center items-center py-3 rounded-xl"
+            className="w-full flex items-center justify-center gap-3 
+                       border border-gray-300 rounded-lg py-2.5 
+                       hover:bg-gray-100 transition"
           >
             <img
               src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"
               alt="Google"
-              className="h-8 w-8"
+              className="w-5 h-5"
             />
+            <span className="text-sm font-medium text-gray-700">
+              Sign in with Google
+            </span>
           </button>
         </form>
       </div>

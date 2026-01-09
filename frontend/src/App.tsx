@@ -18,26 +18,21 @@ const auth = getAuth (app);
 
 function App() {
 
- 
-
-
-
   return (
-    <>
 
     
 
-    <div className="w-full h-screen bg-gray-900">
+    <div className="w-full min-h-screen bg-gray-900">
         <Header></Header>
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
-        <Footer></Footer>  
+        <Footer></Footer>
+       
     </div>
 
-    </>
   )
 }
 
