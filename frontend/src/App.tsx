@@ -7,14 +7,13 @@ import Login from './components/login'
 import CodeEditor from './codeEditor/codeEditor'
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
-import {app } from "./firebase/firebase";
-import "./App.css";
+import { app } from "./firebase/firebase";
 import Footer from './components/footer'
 import SignupPage from './components/signup'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Signup from './components/signup'
 import Home from './pages/home'
-const auth = getAuth (app);
+const auth = getAuth(app);
 
 
 
@@ -22,19 +21,19 @@ function App() {
 
   return (
 
-    
+
 
     <div className="w-full h-screen ">
-        <Header></Header>
-        <Routes>
-          <Route path="/" element={<Navigate to="home" />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/codeEditor" element={<CodeEditor/>}></Route>
-          <Route path="/home" element={<Home></Home>}></Route>
-        </Routes>
-        <Footer></Footer>
-       
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<Navigate to="home" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/codeEditor" element={<CodeEditor />}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
+      </Routes>
+      <Footer></Footer>
+
     </div>
 
   )

@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
 export default function Home() {
+
+  const navigate = useNavigate();
+
+  const handleGetStarted = () =>{
+    navigate("/signup")
+  }
+
   return (
     <main className="bg-white">
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -19,6 +27,7 @@ export default function Home() {
             </p>
 
             <button
+              onClick={handleGetStarted}
               type="button"
               className="mt-8 inline-flex items-center px-8 py-3 text-base font-semibold text-white bg-indigo-700 rounded-full hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 transition"
             >
