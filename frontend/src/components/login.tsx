@@ -123,7 +123,7 @@ export default function Login() {
             onClick={handleGoogleLogin}
             className="w-full flex items-center justify-center gap-3 
                        border border-gray-300 rounded-lg py-2.5 
-                       hover:bg-gray-100 transition"
+                       bg-gray-100 "
           >
             <img
               src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"

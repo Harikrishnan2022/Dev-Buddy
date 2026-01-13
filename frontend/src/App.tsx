@@ -13,6 +13,7 @@ import Footer from './components/footer'
 import SignupPage from './components/signup'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Signup from './components/signup'
+import Home from './pages/home'
 const auth = getAuth (app);
 
 
@@ -23,13 +24,14 @@ function App() {
 
     
 
-    <div className="w-full h-screen bg-gray-900">
+    <div className="w-full h-screen ">
         <Header></Header>
         <Routes>
-          <Route path="/" element={<Navigate to="codeEditor" />} />
+          <Route path="/" element={<Navigate to="home" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/codeEditor" element={<CodeEditor/>}></Route>
+          <Route path="/home" element={<Home></Home>}></Route>
         </Routes>
         <Footer></Footer>
        
