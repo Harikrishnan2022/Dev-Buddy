@@ -31,7 +31,9 @@ function Header() {
             </Link>
             <li className="hover:text-blue-600 cursor-pointer">Services</li>
             <li className="hover:text-blue-600 cursor-pointer">Pricing</li>
-            <li className="hover:text-blue-600 cursor-pointer">Contact</li>
+            <Link to="/contact_us" className="hover:text-blue-600 cursor-pointer">
+              contact us
+            </Link>
           </ul>
 
           {/* Avatar */}

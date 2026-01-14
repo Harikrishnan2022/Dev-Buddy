@@ -14,6 +14,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Signup from './components/signup'
 import Home from './pages/home'
 import AboutUs from './pages/about'
+import ContactUs from './pages/contact_us'
 const auth = getAuth(app);
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/codeEditor" element={<CodeEditor />}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path='/about' element = {<AboutUs></AboutUs>}></Route>
+        <Route path='/contact_us' element={<ContactUs></ContactUs>}></Route>
       </Routes>
       <Footer></Footer>
 
