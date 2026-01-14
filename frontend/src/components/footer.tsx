@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="bg-white rounded-base shadow-xs ">
@@ -8,6 +10,9 @@ export default function Footer() {
             <span className="text-heading self-center text-2xl font-semibold whitespace-nowrap">Flowbite</span>
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-body sm:mb-0">
+             <Link to="/signup" className="text-blue-600 hover:underline font-medium">
+              about
+            </Link>
             <li><a href="#" className="hover:underline mr-4 md:mr-6">About</a></li>
             <li><a href="#" className="hover:underline mr-4 md:mr-6">Privacy Policy</a></li>
             <li><a href="#" className="hover:underline mr-4 md:mr-6">Licensing</a></li>

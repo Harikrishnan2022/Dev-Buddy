@@ -13,6 +13,7 @@ import SignupPage from './components/signup'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Signup from './components/signup'
 import Home from './pages/home'
+import AboutUs from './pages/about'
 const auth = getAuth(app);
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/codeEditor" element={<CodeEditor />}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path='/about' element = {<AboutUs></AboutUs>}></Route>
       </Routes>
       <Footer></Footer>
 

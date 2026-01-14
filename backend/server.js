@@ -59,6 +59,7 @@ wss.on("connection", (ws) => {
 
           default:
             ws.send(JSON.stringify({ stderr: "Unsupported language" }));
+            console.log('${stderr}');
             return;
         }
 

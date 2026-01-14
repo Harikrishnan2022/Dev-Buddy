@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <nav className="w-full bg-white ">
@@ -24,7 +26,9 @@ function Header() {
           {/* Nav Links */}
           <ul className="hidden md:flex gap-8 font-medium text-gray-600">
             <li className="hover:text-blue-600 cursor-pointer">Home</li>
-            <li className="hover:text-blue-600 cursor-pointer">About</li>
+            <Link to="/about" className="hover:text-blue-600 cursor-pointer">
+              about
+            </Link>
             <li className="hover:text-blue-600 cursor-pointer">Services</li>
             <li className="hover:text-blue-600 cursor-pointer">Pricing</li>
             <li className="hover:text-blue-600 cursor-pointer">Contact</li>
